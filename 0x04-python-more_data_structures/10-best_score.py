@@ -9,6 +9,6 @@ def best_score(a_dictionary):
     for key, val in a_dictionary.items():
         if val > valBest:
             valBest = val
-            keyBest = k
+            keyBest = key
 
     return keyBest
