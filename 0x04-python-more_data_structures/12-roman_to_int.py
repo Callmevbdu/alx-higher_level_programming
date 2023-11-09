@@ -3,12 +3,12 @@ def roman_to_int(roman_string):
     if not isinstance(roman_string, str):
         return 0
 
-    sum_ = 0
-    classicNum = 0
-    romanNum = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+    summ = 0
+    number = 0
+    roman = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
 
-    for rev in reversed(roman_string):
-        classicNum = romanNum[rev]
-        sum_ += classicNum if sum_ < classicNum * 5 else -classicNum
+    for i in reversed(roman_string):
+        number = roman[i]
+        summ += number if summ < number * 5 else -number
 
-    return sum_
+    return summ
