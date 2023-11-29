@@ -1,3 +1,3 @@
-#!/bin/usr/pyhton3
+#!/usr/bin/pyhton3
 def copy_list(l):
     return (l.copy)
