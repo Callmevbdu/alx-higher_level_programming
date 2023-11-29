@@ -1,1 +1,1 @@
-This is my higher level programming repository for the ALX studies school.
+This is my "python-more_classes" directory for the ALX studies school.
