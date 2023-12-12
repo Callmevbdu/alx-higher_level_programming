@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+'''Base class model.'''
 from json import dumps, loads
 import csv
 

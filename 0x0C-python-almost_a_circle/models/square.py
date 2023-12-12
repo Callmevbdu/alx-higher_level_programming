@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+'''Base class model.'''
 from models.rectangle import Rectangle
 
 
