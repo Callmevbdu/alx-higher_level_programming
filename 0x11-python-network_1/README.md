@@ -25,7 +25,7 @@
 - Your code should not be executed when imported (by using if __name__ == "__main__":)
 
 ## Tasks
-**0. What's my status? #0: [0-hbtn_status.py]** 
+[**0. What's my status? #0**](0-hbtn_status.py)
 - Write a Python script that fetches "https://alx-intranet.hbtn.io/status"
 
 * You must use the package "urllib"
