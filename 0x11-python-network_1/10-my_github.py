@@ -7,28 +7,15 @@ uses the GitHub API to display your id.
 import requests
 
 
-def get_my_github_id(username, access_token):
-    url = f"https://api.github.com/users/{username}"
-    headers = {"Authorization": f"token {access_token}"}
+if __name__ == '__main__':
+    from requests import get
+    from sys import argv
 
-    response = requests.get(url, headers=headers)
+    username = argv[1]
+    password = argv[2]
 
-    if response.status_code == 200:
-        data = response.json()
-        return data.get("id")
-    else:
-        print(f"Error: {response.status_code}")
-        return None
+    URL = "https://api.github.com/user"
+    response = get(URL, auth=(username, password))
+    json = response.json()
 
-
-access_token = "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"
-
-
-if __name__ == "__main__":
-    username = sys.argv[1]
-    my_id = get_my_github_id(username, access_token)
-
-    if my_id:
-        print(my_id)
-    else:
-        print("Failed to retrieve ID")
+    print(json.get('id'))
