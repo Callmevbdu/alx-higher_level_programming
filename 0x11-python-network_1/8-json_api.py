@@ -4,6 +4,10 @@ a Python script that takes in a letter and sends a POST request to
 "http://0.0.0.0:5000/search_user" with the letter as a parameter.
 """
 
+import requests
+import sys
+
+
 if __name__ == "__main__":
     query = argv[1] if len(argv) > 1 else ""
 
