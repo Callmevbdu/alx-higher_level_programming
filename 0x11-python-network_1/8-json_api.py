@@ -16,9 +16,9 @@ if __name__ == "__main__":
 
     try:
         response.raise_for_status()
-        data = response.json()  # Attempt to parse JSON
+        data = response.json()
 
-        if data:  # Check for empty response
+        if data:
             for user in data:
                 print(f"[{user['id']}] {user['name']}")
         else:
