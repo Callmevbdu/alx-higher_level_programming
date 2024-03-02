@@ -8,24 +8,16 @@ import requests
 import sys
 
 
-if __name__ == "__main__":
-    query = argv[1] if len(argv) > 1 else ""
-
-    url = "http://0.0.0.0:5000/search_user"
-
-    response = requests.post(url, data={"q": query})
-
+if __name__ == '__main__':
+    q = argv[1] if len(argv) == 2 else ""
+    url = 'http://0.0.0.0:5000/search_user'
+    req = requests.post(url, data={'q': q})
     try:
-        data = response.json()
-
-        if not data or not any(key in data for key in ("id", "name")):
+        req_dict = req.json()
+        id, name = req_dict.get('id'), req_dict.get('name')
+        if len(req_dict) == 0 or not id or not name:
             print("No result")
         else:
-            user_id = data.get("id")
-            user_name = data.get("name")
-            print(f"[{user_id}] {user_name}")
-
-    except requests.exceptions.RequestException as e:
-        print(f"Error: {e}")
-    except ValueError:
+            print("[{}] {}".format(req_dict.get('id'), req_dict.get('name')))
+    except Exception:
         print("Not a valid JSON")
