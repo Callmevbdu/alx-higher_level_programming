@@ -5,16 +5,17 @@
 const request = require('request');
 let count = 0;
 
-request(process.argv[2], (error, response, body) => {
+request.get(process.argv[2], (error, response, body) => {
   if (error) {
-    console.error(error);
+    console.log(error);
   } else {
-    const filmsData = JSON.parse(body).results;
-
-    filmsData.forEach((film) => {
-      if (film.characters.includes('https://swapi-api.alx-tools.com/api/people/18/')) {
-        count++;
-      }
+    const filmsData = JSON.parse(body);
+    filmsData.results.forEach((film) => {
+      film.characters.forEach((character) => {
+        if (character.includes(18)) {
+          count += 1;
+        }
+      });
     });
 
     console.log(count);
