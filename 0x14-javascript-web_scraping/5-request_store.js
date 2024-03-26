@@ -3,20 +3,15 @@
 
 const request = require('request');
 const fs = require('fs');
-const url = process.argv[2];
-const filePath = process.argv[3];
 
-request(url, (error, response, body) => {
+request.get(process.argv[2], (error, response, body) => {
   if (error) {
-    console.error(error);
-    return;
+    console.log(error);
+  } else {
+    fs.writeFile(process.argv[3], body, 'utf-8', (err) => {
+      if (err) {
+        console.log(err);
+      }
+    });
   }
-
-  fs.writeFile(filePath, body, 'utf-8', (err) => {
-    if (err) {
-      console.error(err);
-      return;
-    }
-    console.log(`File ${filePath} written successfully`);
-  });
 });
