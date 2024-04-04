@@ -25,4 +25,3 @@
 * [**0x0D-SQL_introduction**](0x0D-SQL_introduction)
 * [**0x0E-SQL_more_queries**](0x0E-SQL_more_queries)
 * [**0x0F-python-object_relational_mapping**](0x0F-python-object_relational_mapping)
-* [****]()
